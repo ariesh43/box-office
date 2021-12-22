@@ -28,9 +28,9 @@ export const Starred = () => {
   }, [starred]);
   return (
     <MainPageLayout>
-      {isLoading && <div>Shows are still loading</div>}
+      {isLoading && <center>Shows are still loading</center>}
       {error && <div>Error occured:{error}</div>}
-      {!isLoading && !shows && <div>No shows where added</div>}
+      {!isLoading && !shows && <center>No shows where added</center>}
       {!isLoading && !error && shows && <ShowGrid data={shows} />}
     </MainPageLayout>
   );
