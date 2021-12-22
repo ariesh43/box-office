@@ -4,6 +4,12 @@ import MainPageLayout from '../components/MainPageLayout';
 import { ShowGrid } from '../components/show/ShowGrid';
 import { ActorGrid } from '../components/actor/ActorGrid';
 import { useLastQuery } from '../misc/custom-hooks';
+import {
+  RadioInputsWrapper,
+  SearchButtonWrapper,
+  SearchInput,
+} from './Home.styled';
+import { CustomRadio } from '../components/CustomRadio';
 
 export const Home = () => {
   const [input, setInput] = useLastQuery();
@@ -43,38 +49,38 @@ export const Home = () => {
   };
   return (
     <MainPageLayout>
-      <input
+      <SearchInput
         type="text"
         placeholder="Search for something"
         onChange={onInputChange}
         onKeyDown={onKeyDown}
         value={input}
       />
-      <div>
-        <label htmlFor="shows-search">
-          Shows
-          <input
-            type="radio"
+      <RadioInputsWrapper>
+        <div>
+          <CustomRadio
+            label="Shows"
             id="show-search"
             value="shows"
             checked={isShowSearch}
             onChange={onRadioChange}
           />
-        </label>
-        <label htmlFor="actors-search">
-          Actors
-          <input
-            type="radio"
+        </div>
+        <div>
+          <CustomRadio
+            label="Actors"
             id="actor-search"
             value="people"
             checked={!isShowSearch}
             onChange={onRadioChange}
           />
-        </label>
-      </div>
-      <button type="button" onClick={onSearch}>
-        Search
-      </button>
+        </div>
+      </RadioInputsWrapper>
+      <SearchButtonWrapper>
+        <button type="button" onClick={onSearch}>
+          Search
+        </button>
+      </SearchButtonWrapper>
       {renderResults()}
     </MainPageLayout>
   );

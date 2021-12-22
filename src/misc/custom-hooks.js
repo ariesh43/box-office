@@ -41,7 +41,6 @@ export const useLastQuery = (key = 'lastQuery') => {
 };
 const reducer = (prevState, action) => {
   switch (action.type) {
-    // eslint-disable-next-line no-lone-blocks
     case 'FETCH_SUCCESS': {
       return { isLoading: false, error: null, show: action.show };
     }
