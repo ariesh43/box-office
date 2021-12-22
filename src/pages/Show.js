@@ -43,7 +43,7 @@ const Show = () => {
           if (isMounted) {
             dispatch({ type: 'FETCH_SUCCESS', show: result });
           }
-        }, 1000);
+        }, 1300);
       })
       .catch(err => {
         if (isMounted) {
