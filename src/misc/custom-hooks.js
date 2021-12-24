@@ -1,5 +1,5 @@
-import { useReducer, useEffect, useState } from 'react';
-import { useCallback } from 'react/cjs/react.development';
+import { useReducer, useEffect, useState, useCallback } from 'react';
+
 import { apiGet } from './config';
 
 const showReducer = (prevState, action) => {
